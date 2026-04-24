@@ -9,6 +9,6 @@ public class Rooms {
 
     @Override
     public String toString() {
-        return "INSERT INTO Rooms VALUES ('" + name + "');";
+        return "INSERT INTO Rooms (RoomName) VALUES ('" + name + "');";
     }
 }

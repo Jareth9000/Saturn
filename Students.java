@@ -9,6 +9,6 @@ public class Students {
 
     @Override
     public String toString() {
-        return "INSERT INTO Students VALUES ('" + name + "');";
+        return "INSERT INTO Students (StudentName) VALUES ('" + name + "');";
     }
 }
