@@ -7,5 +7,8 @@ public class TypeData {
         types.add(new Type("Elective"));
         types.add(new Type("Regents course"));
         types.add(new Type("AP course"));
+        for (Type type:types) {
+            System.out.println(type.toString);
+        }
     }
 }
