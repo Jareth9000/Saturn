@@ -12,6 +12,6 @@ public class Teachers {
 
     @Override
     public String toString() {
-        return "INSERT INTO Teachers (TeacherName, TeacherID, DepartmentID) VALUES ('" + name + "'," + teacherID +" ," + departmentID + ");";
+        return "INSERT INTO Teachers (TeacherName, TeacherID, DepartmentID) VALUES ('" + name + "', " + teacherID +", " + departmentID + ");";
     }
 }
