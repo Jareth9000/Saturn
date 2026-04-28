@@ -11,6 +11,4 @@ public class Roster {
     public String toString(){
         return "INSERT INTO Rosters (OfferingID, StudentID) VALUES (" + OfferingID + ", " + StudentID + ");";
     }
-
-
 }
