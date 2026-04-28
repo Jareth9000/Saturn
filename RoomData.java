@@ -1,22 +1,19 @@
 import java.util.ArrayList;
-import java.io.FileNotFoundException;
 
 public class RoomData {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         ArrayList<Rooms> data = new ArrayList<>();
         String add = "";
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 4; j++){
                 for(int k = 1; k < 21; k++){
                     add = "";
-                    //first
                     if(i == 0){
                         add += "B";
                     }
                     else{
                         add += i;
                     }
-                    //second
                     if(j == 0){
                         add += "N";
                     }
@@ -29,7 +26,6 @@ public class RoomData {
                     else{
                         add += "W";
                     }
-                    //third
                     add += k;
                     data.add(new Rooms(add));
                 }
