@@ -2,7 +2,7 @@ public class Teachers {
     private String name;
     private int departmentID;
     private int teacherID;
-    private static int currID = 0;
+    private static int currID = 1;
 
     public Teachers(String name, int departmentID) {
         this.name = name;
