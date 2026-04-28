@@ -9,6 +9,6 @@ public class Type {
 
     @Override
     public String toString() {
-        return "INSERT INTO Types (TypeName, TypeID) VALUES ('" + name + "'," + TypeID + ");";
+        return "INSERT INTO Types (TypeName) VALUES ('" + name + "'");";
     }
 }
