@@ -1,12 +1,13 @@
 public class Teachers {
     private String name;
     private int departmentID;
-    private static int teacherID = 0;
+    private int teacherID;
+    private static int currID = 0;
 
     public Teachers(String name, int departmentID) {
         this.name = name;
         this.departmentID = departmentID;
-        teacherID++;
+        teacherID = currID++;
     }
 
     @Override
