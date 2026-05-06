@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TeacherData {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static ArrayList<Teachers> teacherData() {
         int count = 0;
         String[] staffList = {
                 "Ms. Angelene Alberga, Biological Sciences",
@@ -354,48 +354,45 @@ public class TeacherData {
 
         for(int i = 0; i < staffList.length; i++){
             count++;
-            String[] add = staffList[i].split(", ");
-            if(add[1].equals("Biological Sciences")){
-                add[1] = "1";
+            String[] values = staffList[i].split(", ");
+            if(values[1].equals("Biological Sciences")){
+                values[1] = "1";
             }
-            else if(add[1].equals("Chemistry")){
-                add[1] = "2";
+            else if(values[1].equals("Chemistry")){
+                values[1] = "2";
             }
-            else if(add[1].equals("CTE")){
-                add[1] = "3";
+            else if(values[1].equals("CTE")){
+                values[1] = "3";
             }
-            else if(add[1].equals("English")){
-                add[1] = "4";
+            else if(values[1].equals("English")){
+                values[1] = "4";
             }
-            else if(add[1].equals("Health & PE")){
-                add[1] = "5";
+            else if(values[1].equals("Health & PE")){
+                values[1] = "5";
             }
-            else if(add[1].equals("Mathematics")){
-                add[1] = "6";
+            else if(values[1].equals("Mathematics")){
+                values[1] = "6";
             }
-            else if(add[1].equals("Physics")){
-                add[1] = "7";
+            else if(values[1].equals("Physics")){
+                values[1] = "7";
             }
-            else if(add[1].equals("Social Studies")){
-                add[1] = "8";
+            else if(values[1].equals("Social Studies")){
+                values[1] = "8";
             }
-            else if(add[1].equals("Special Education")){
-                add[1] = "9";
+            else if(values[1].equals("Special Education")){
+                values[1] = "9";
             }
-            else if(add[1].equals("Visual & Performing Arts")){
-                add[1] = "10";
+            else if(values[1].equals("Visual & Performing Arts")){
+                values[1] = "10";
             }
-            else if(add[1].equals("World Languages & ENL")){
-                add[1] = "11";
+            else if(values[1].equals("World Languages & ENL")){
+                values[1] = "11";
             }
             else{
                 System.out.println("error");
             }
-            data.add(new Teachers(add[0], Integer.parseInt(add[1])));
+            data.add(new Teachers(values[0], Integer.parseInt(values[1])));
         }
-
-        for(Teachers print: data){
-            System.out.println(print.toString());
-        }
+        return data;
     }
 }
