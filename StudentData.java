@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class StudentData {
-    public static void main(String[] args){
-        String[] names =
+    public static ArrayList<Students> studentData(){
+        String[] firstName =
                 {"Aaron",
                         "Abbey",
                         "Abbie",
@@ -5269,23 +5269,21 @@ public class StudentData {
                 "Mccann", "Terrell", "Jarvis", "Dickson", "Reyna", "Cantrell", "Mayo", "Branch", "Hendrix", "Rollins",
                 "Rowland", "Whitney", "Duke", "Odom", "Daugherty", "Travis", "Tang"
         };
-        ArrayList<String> names2 = new ArrayList<>();
-        ArrayList<Students> data = new ArrayList<>();
-        for (int i = 0; i < names.length; i++){
-            names2.add(names[i]);
+        ArrayList<String> firstNameArray = new ArrayList<>();
+        ArrayList<Students> students = new ArrayList<>();
+        for (int i = 0; i < firstName.length; i++){
+            firstNameArray.add(firstName[i]);
         }
         int count = 0;
-        for (String name : names) {
+        for (String name : firstName) {
             if (count >= 5000) {
                 break;
             }
             count++;
-            int delete = (int)(Math.random() * names2.size());
-            data.add(new Students(names2.get(delete) + " " + lastNames[(int) (Math.random() * lastNames.length)]));
-            names2.remove(delete);
+            int delete = (int)(Math.random() * firstNameArray.size());
+            students.add(new Students(firstNameArray.get(delete) + " " + lastNames[(int) (Math.random() * lastNames.length)]));
+            firstNameArray.remove(delete);
         }
-        for(Students print: data){
-            System.out.println(print.toString());
-        }
+        return students;
     }
 }
