@@ -1,13 +1,7 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class TeacherData {
     public static ArrayList<Teachers> teacherData() {
-        int count = 0;
         String[] staffList = {
                 "Ms. Angelene Alberga, Biological Sciences",
                 "Mr. James Bacchi, Biological Sciences",
@@ -353,7 +347,6 @@ public class TeacherData {
         ArrayList<Teachers> data = new ArrayList<>();
 
         for(int i = 0; i < staffList.length; i++){
-            count++;
             String[] values = staffList[i].split(", ");
             if(values[1].equals("Biological Sciences")){
                 values[1] = "1";
