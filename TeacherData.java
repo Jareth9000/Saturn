@@ -345,9 +345,11 @@ public class TeacherData {
                 "Ms. Peihong Ye, World Languages & ENL"
         };
         ArrayList<Teachers> data = new ArrayList<>();
-
         for(int i = 0; i < staffList.length; i++){
             String[] values = staffList[i].split(", ");
+            if(values[0].contains("'")){
+                values[0] = values[0].substring(0, values[0].indexOf("'")) + "'" + values[0].substring(values[0].indexOf("'"));
+            }
             if(values[1].equals("Biological Sciences")){
                 values[1] = "1";
             }
