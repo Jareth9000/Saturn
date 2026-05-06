@@ -1,12 +1,21 @@
 import java.util.ArrayList;
 
 public class Period {
+    private int periodNumber;
     private ArrayList<Rooms> roomsTaken;
     private ArrayList<Teachers> teachersTaken;
     private ArrayList<Students> studentsTaken;
     private ArrayList<Offerings> classes;
 
-    public Period() {}
+    public Period(int pNum) {
+        // instinatiate each array list to an empty list
+        this.periodNumber = pNum;
+        roomsTaken = new ArrayList<>();
+        teachersTaken = new ArrayList<>();
+        studentsTaken = new ArrayList<>();
+        classes = new ArrayList<>();
+
+    }
 
     public boolean addRoom(Rooms newRoom) {
         if (!roomsTaken.contains(newRoom)) {
