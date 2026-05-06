@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CourseData {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static ArrayList<Course> makeCourses() {
         File file = new File("src//data"); // reads file with all course data from data doc
-        Scanner scan = new Scanner(file);
+        Scanner scan;
+        try {
+            scan = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         ArrayList<Course> courses = new ArrayList<>();
         int type = 0;
         while (scan.hasNext()) {
@@ -18,11 +23,9 @@ public class CourseData {
             } else if (str.equals("Elective / Non-AP / Non-Regents Courses")) {
                 type = 1;
             }
-            Course course = new Course(str,type);
+            Course course = new Course(str, type);
             courses.add(course);
         }
-        for (Course course: courses) {
-            System.out.println(course.toString());
-        }
+        return courses;
     }
 }
