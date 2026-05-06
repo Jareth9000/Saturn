@@ -1,12 +1,7 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class DepartmentData {
-    public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("src//data");
-        Scanner scan = new Scanner(file);
+    public static ArrayList<Department> departmentData(String[] args) {
         ArrayList<Department> departments = new ArrayList<>();
         departments.add(new Department("Biological Sciences"));
         departments.add(new Department("Chemistry"));
@@ -19,5 +14,6 @@ public class DepartmentData {
         departments.add(new Department("Special Education"));
         departments.add(new Department("Visual & Performing Arts"));
         departments.add(new Department("World Languages & ENL"));
+        return departments;
     }
 }
