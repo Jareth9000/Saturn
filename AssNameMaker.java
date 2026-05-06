@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class AssNameMaker {
-    public static void main(String[] args) {
-        ArrayList<AssignmentNames> AssNamesData = new ArrayList<>();
+    public static ArrayList<AssignmentNames> makeAssignmentNames() {
+
+        ArrayList<AssignmentNames> assNamesData = new ArrayList<>();
         AssignmentNames C1 = new AssignmentNames("Class Work 1");
         AssignmentNames H1 = new AssignmentNames("Homework 1");
         AssignmentNames C2 = new AssignmentNames("Class Work 2");
@@ -19,22 +20,23 @@ public class AssNameMaker {
         AssignmentNames H6 = new AssignmentNames("Homework 6");
         AssignmentNames T3 = new AssignmentNames("Test 3");
 
-        AssNamesData.add(C1);
-        AssNamesData.add(H1);
-        AssNamesData.add(C2);
-        AssNamesData.add(H2);
-        AssNamesData.add(T1);
-        AssNamesData.add(C3);
-        AssNamesData.add(H3);
-        AssNamesData.add(C4);
-        AssNamesData.add(H4);
-        AssNamesData.add(T2);
-        AssNamesData.add(C5);
-        AssNamesData.add(H5);
-        AssNamesData.add(C6);
-        AssNamesData.add(H6);
-        AssNamesData.add(T3);
+        assNamesData.add(C1);
+        assNamesData.add(H1);
+        assNamesData.add(C2);
+        assNamesData.add(H2);
+        assNamesData.add(T1);
+        assNamesData.add(C3);
+        assNamesData.add(H3);
+        assNamesData.add(C4);
+        assNamesData.add(H4);
+        assNamesData.add(T2);
+        assNamesData.add(C5);
+        assNamesData.add(H5);
+        assNamesData.add(C6);
+        assNamesData.add(H6);
+        assNamesData.add(T3);
 
+        return assNamesData;
     }
 
 }
