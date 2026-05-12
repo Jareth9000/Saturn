@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class RoomData {
     public static ArrayList<Rooms> makeRooms() {
-        ArrayList<Rooms> Roomsdata = new ArrayList<>();
+        ArrayList<Rooms> roomsData = new ArrayList<>();
         String add = "";
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 4; j++){
@@ -27,10 +27,10 @@ public class RoomData {
                         add += "W";
                     }
                     add += k;
-                    Roomsdata.add(new Rooms(add));
+                    roomsData.add(new Rooms(add));
                 }
             }
         }
-        return Roomsdata;
+        return roomsData;
     }
 }
