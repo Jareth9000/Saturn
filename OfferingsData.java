@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class OfferingsData {
-    public static ArrayList<Offerings> offeringsData(String[] args) {
+    public static ArrayList<Offerings> offeringsData() {
         ArrayList<Course> courses = CourseData.makeCourses();
         ArrayList<Teachers> teachers = TeacherData.teacherData();
         ArrayList<Rooms> rooms  = RoomData.makeRooms();
