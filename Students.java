@@ -1,11 +1,14 @@
 public class Students {
-    private final String name;
-    private final int studentID;
-    private static int currID;
+    private String name;
+    private static int ID;
 
     public Students(String name) {
         this.name = name;
-        studentID = currID++;
+        ID++;
+    }
+
+    public static int getID() {
+        return ID;
     }
 
     @Override
