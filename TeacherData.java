@@ -345,48 +345,25 @@ public class TeacherData {
                 "Ms. Peihong Ye, World Languages & ENL"
         };
         ArrayList<Teachers> data = new ArrayList<>();
-        for(int i = 0; i < staffList.length; i++){
-            String[] values = staffList[i].split(", ");
-            if(values[0].contains("'")){
-                values[0] = values[0].substring(0, values[0].indexOf("'")) + "'" + values[0].substring(values[0].indexOf("'"));
+        for (String staff : staffList) {
+            String[] insertValues = staff.split(", ");
+            if (insertValues[0].contains("'")) {
+                insertValues[0] = insertValues[0].substring(0, insertValues[0].indexOf("'")) + "'" + insertValues[0].substring(insertValues[0].indexOf("'"));
             }
-            if(values[1].equals("Biological Sciences")){
-                values[1] = "1";
+            switch (insertValues[1]) {
+                case "Biological Sciences" -> insertValues[1] = "1";
+                case "Chemistry" -> insertValues[1] = "2";
+                case "CTE" -> insertValues[1] = "3";
+                case "English" -> insertValues[1] = "4";
+                case "Health & PE" -> insertValues[1] = "5";
+                case "Mathematics" -> insertValues[1] = "6";
+                case "Physics" -> insertValues[1] = "7";
+                case "Social Studies" -> insertValues[1] = "8";
+                case "Special Education" -> insertValues[1] = "9";
+                case "Visual & Performing Arts" -> insertValues[1] = "10";
+                case "World Languages & ENL" -> insertValues[1] = "11";
             }
-            else if(values[1].equals("Chemistry")){
-                values[1] = "2";
-            }
-            else if(values[1].equals("CTE")){
-                values[1] = "3";
-            }
-            else if(values[1].equals("English")){
-                values[1] = "4";
-            }
-            else if(values[1].equals("Health & PE")){
-                values[1] = "5";
-            }
-            else if(values[1].equals("Mathematics")){
-                values[1] = "6";
-            }
-            else if(values[1].equals("Physics")){
-                values[1] = "7";
-            }
-            else if(values[1].equals("Social Studies")){
-                values[1] = "8";
-            }
-            else if(values[1].equals("Special Education")){
-                values[1] = "9";
-            }
-            else if(values[1].equals("Visual & Performing Arts")){
-                values[1] = "10";
-            }
-            else if(values[1].equals("World Languages & ENL")){
-                values[1] = "11";
-            }
-            else{
-                System.out.println("error");
-            }
-            data.add(new Teachers(values[0], Integer.parseInt(values[1])));
+            data.add(new Teachers(insertValues[0], Integer.parseInt(insertValues[1])));
         }
         return data;
     }
