@@ -1,6 +1,6 @@
 public class Students {
-    private String name;
-    private int studentID;
+    private final String name;
+    private final int studentID;
     private static int currID;
 
     public Students(String name) {
