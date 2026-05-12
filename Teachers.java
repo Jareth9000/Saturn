@@ -1,17 +1,13 @@
 public class Teachers {
-    private String name;
-    private int departmentID;
-    private int teacherID;
+    private final String name;
+    private final int departmentID;
+    private final int teacherID;
     private static int currID = 1;
 
     public Teachers(String name, int departmentID) {
         this.name = name;
         this.departmentID = departmentID;
         teacherID = currID++;
-    }
-
-    public int getID() {
-        return teacherID;
     }
 
     @Override
