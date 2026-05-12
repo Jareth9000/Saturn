@@ -1,10 +1,10 @@
 public class Offerings {
     private static int currID = 1;
-    private final int ID;
-    private final int period;
-    private final int courseID;
-    private final int teacherID;
-    private final int roomID;
+    private int ID;
+    private int period;
+    private int courseID;
+    private int teacherID;
+    private int roomID;
 
     public Offerings(int period, int courseID, int teacherID, int roomID) {
         this.period = period;
@@ -20,6 +20,6 @@ public class Offerings {
 
     @Override
     public String toString() {
-        return "INSERT INTO Offerings (CourseID, TeacherID, RoomID, Period) VALUES ('" + courseID + "', '" + teacherID + "', '" + roomID + "', '" + period + "');";
+        return "INSERT INTO Offerings (CourseID, TeacherID, RoomID, Period) VALUES (" + courseID + ", " + teacherID + ", " + roomID + ", " + period + ");";
     }
 }
