@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StudentData {
     public static ArrayList<Students> studentData(){
@@ -5269,11 +5270,8 @@ public class StudentData {
                 "Mccann", "Terrell", "Jarvis", "Dickson", "Reyna", "Cantrell", "Mayo", "Branch", "Hendrix", "Rollins",
                 "Rowland", "Whitney", "Duke", "Odom", "Daugherty", "Travis", "Tang"
         };
-        ArrayList<String> firstNameArray = new ArrayList<>();
         ArrayList<Students> students = new ArrayList<>();
-        for (int i = 0; i < firstName.length; i++){
-            firstNameArray.add(firstName[i]);
-        }
+        ArrayList<String> firstNameArray = new ArrayList<>(Arrays.asList(firstName));
         int count = 0;
         for (String name : firstName) {
             if (count >= 5000) {
