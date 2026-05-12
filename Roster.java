@@ -1,6 +1,6 @@
 public class Roster {
-    private int OfferingID;
-    private int StudentID;
+    private final int OfferingID;
+    private final int StudentID;
 
     private Roster(int OfferingID, int StudentID){
         this.OfferingID = OfferingID;
