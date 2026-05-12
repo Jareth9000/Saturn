@@ -1,7 +1,8 @@
 public class AssignmentNames {
-    private String name;
+    private final String name;
+    private final int ID;
     private static int currID = 1;
-    private int ID;
+
 
     public AssignmentNames(String name) {
         this.name = name;
