@@ -5272,15 +5272,10 @@ public class StudentData {
         };
         ArrayList<Students> students = new ArrayList<>();
         ArrayList<String> firstNameArray = new ArrayList<>(Arrays.asList(firstName));
-        int count = 0;
-        for (String name : firstName) {
-            if (count >= 5000) {
-                break;
-            }
-            count++;
-            int delete = (int)(Math.random() * firstNameArray.size());
-            students.add(new Students(firstNameArray.get(delete) + " " + lastNames[(int) (Math.random() * lastNames.length)]));
-            firstNameArray.remove(delete);
+        while (students.size() < 5000) {
+            int usedFirstName = (int) (Math.random() * firstNameArray.size());
+            students.add(new Students(firstNameArray.get(usedFirstName) + " " + lastNames[(int) (Math.random() * lastNames.length)]));
+            firstNameArray.remove(usedFirstName);
         }
         return students;
     }
