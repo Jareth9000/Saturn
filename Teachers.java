@@ -10,7 +10,7 @@ public class Teachers {
         teacherID = currID++;
     }
 
-    public int getTeacherID() {
+    public int getID() {
         return teacherID;
     }
 
