@@ -1,5 +1,5 @@
 public class Department {
-    private String name;
+    private final String name;
     private static int ID = 0;
 
     public Department(String name) {
