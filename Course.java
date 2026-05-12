@@ -1,7 +1,7 @@
 public class Course {
-    private String name;
-    private int TypeID;
-    private int ID;
+    private final String name;
+    private final int TypeID;
+    private final int ID;
     private static int CourseID = 1;
 
 
