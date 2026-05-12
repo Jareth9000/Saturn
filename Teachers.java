@@ -10,6 +10,10 @@ public class Teachers {
         teacherID = currID++;
     }
 
+    public int getTeacherID() {
+        return teacherID;
+    }
+
     @Override
     public String toString() {
         return "INSERT INTO Teachers (TeacherName, TeacherID, DepartmentID) VALUES ('" + name + "', " + teacherID +", " + departmentID + ");";
