@@ -1,6 +1,6 @@
 public class Type {
-    private String name;
-    private int ID;
+    private final String name;
+    private final int ID;
     private static int TypeID = 0;
 
     public Type (String name) {
