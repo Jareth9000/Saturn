@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class DepartmentData {
-    public static ArrayList<Department> departmentData(String[] args) {
+    public static ArrayList<Department> departmentData() {
         ArrayList<Department> departments = new ArrayList<>();
         departments.add(new Department("Biological Sciences"));
         departments.add(new Department("Chemistry"));
