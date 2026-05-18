@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 
 public class RosterData {
-    public static ArrayList<Roster> RosterData(){
+    public static ArrayList<Roster> RosterData(ArrayList<Offerings> offerings, ArrayList<Students> studentList){
         ArrayList<Roster> rosterData = new ArrayList<>();
-        ArrayList<Students> studentList = StudentData.studentData();
-        ArrayList<Offerings> offerings = OfferingsData.offeringsData();
         for(Students student: studentList){
             for(int i = 1; i <= 10; i++){
                 int random = (int)(Math.random() * offerings.size());
