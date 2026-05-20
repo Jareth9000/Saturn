@@ -9,8 +9,7 @@ public class StudentData{
         File file = new File("src//StudentFile");
         Scanner scanner = new Scanner(file);
         while(scanner.hasNextLine()){
-            String studentName = scanner.nextLine();
-            studentsData.add(new Students(studentName));
+            studentsData.add(new Students(scanner.nextLine()));
         }
         return studentsData;
     }
