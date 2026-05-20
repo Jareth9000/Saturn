@@ -59,12 +59,7 @@ public class SaturnDataMaker {
         return teachers;
     }
 
-    import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
-public class StudentData{
     public static ArrayList<Students> studentData() throws FileNotFoundException {
         ArrayList<Students> studentsData = new ArrayList<>();
         File file = new File("src//StudentFile");
@@ -74,7 +69,7 @@ public class StudentData{
         }
         return studentsData;
     }
-}
+
 
     public static ArrayList<Rooms> makeRooms() {
         ArrayList<Rooms> Roomsdata = new ArrayList<>();
