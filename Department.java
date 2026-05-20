@@ -1,15 +1,23 @@
 public class Department {
-    private final String name;
-    private static int currID = 1;
-    private final int departmentID;
+    private String name;
+    private int ID;
+    private static int DepartmentID = 1;
 
     public Department(String name) {
         this.name = name;
-        departmentID = currID++;
+        ID = DepartmentID++;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     @Override
     public String toString() {
-        return "INSERT INTO Departments (DepartmentName, departmentID) VALUES ('" + name + "', " + departmentID + ");";
+        return "INSERT INTO Departments (DepartmentName, departmentID) VALUES ('" + name + "'," + ID + ");";
     }
 }
