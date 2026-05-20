@@ -5828,4 +5828,18 @@ public class SaturnDataMaker {
         }
         return offers;
     }
+
+    public static ArrayList<Assignment> makeAssignments(ArrayList<Roster> rosters) {
+        ArrayList<Assignment> assignments = new ArrayList<>();
+        ArrayList<AssignmentNames> assignmentNames = AssNameMaker.makeAssignmentsNames();
+        for (Roster roster : rosters) {
+            for (int i = 0; i < 15; i++) {
+                int grade = (int) (Math.random() * 26) + 75;
+                boolean scale = assignmentNames.get(i).getName().contains("Test");
+                Assignment assignment = new Assignment(assignmentNames.get(i).getID(),roster.getStudentID(),roster.getOfferingID(),scale,grade);
+                assignments.add(assignment);
+            }
+        }
+        return assignments;
+    }
 }
