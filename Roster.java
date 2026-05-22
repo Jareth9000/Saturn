@@ -7,6 +7,14 @@ public class Roster {
         this.StudentID = StudentID;
     }
 
+    public int getOfferingID() {
+        return OfferingID;
+    }
+
+    public int getStudentID() {
+        return StudentID;
+    }
+
     @Override
     public String toString(){
         return "INSERT INTO Rosters (OfferingID, StudentID) VALUES (" + OfferingID + ", " + StudentID + ");";
