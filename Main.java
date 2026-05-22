@@ -40,7 +40,7 @@ public class Main {
         for (AssignmentNames assignmentNames1: assignmentNames) {
             System.out.println(assignmentNames1);
         }
-        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments();
+        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments(rosterList);
         for (Assignment assignment : assignments) {
             System.out.println(assignment);
         }
