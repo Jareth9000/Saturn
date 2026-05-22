@@ -1,10 +1,11 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SaturnDataMaker {
-     public static ArrayList<Department> DepartmentData() throws FileNotFoundException {
+    public static ArrayList<Department> DepartmentData() throws FileNotFoundException {
         ArrayList<Department> departmentData = new ArrayList<>();
         File file = new File("src//DepartmentFile");
         Scanner scanner = new Scanner(file);
@@ -25,8 +26,8 @@ public class SaturnDataMaker {
         return types;
     }
 
-    public static ArrayList<Teachers> teacherData() {
-        File file = new File("src//data"); // reads file with all course data from data doc
+    public static ArrayList<Teachers> teacherData() throws FileNotFoundException {
+        File file = new File("src//TeacherFile"); // reads file with all course data from data doc
         Scanner scan;
         try {
             scan = new Scanner(file);
@@ -35,7 +36,7 @@ public class SaturnDataMaker {
         }
 
         ArrayList<Teachers> teachers = new ArrayList<>();
-        ArrayList<Department> departments = SaturnDataMaker.departmentData();
+        ArrayList<Department> departments = SaturnDataMaker.DepartmentData();
         int departmentID = 0;
 
         while (scan.hasNext()) {
@@ -54,16 +55,16 @@ public class SaturnDataMaker {
     }
 
 
-
-        public static ArrayList<Students> studentData() throws FileNotFoundException {
-            ArrayList<Students> studentsData = new ArrayList<>();
-            File file = new File("src//StudentFile");
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                studentsData.add(new Students(scanner.nextLine()));
-            }
-            return studentsData;
+    public static ArrayList<Students> studentData() throws FileNotFoundException {
+        ArrayList<Students> studentsData = new ArrayList<>();
+        File file = new File("src//StudentFile");
+        Scanner scanner = new Scanner(file);
+        while(scanner.hasNextLine()){
+            studentsData.add(new Students(scanner.nextLine()));
         }
+        return studentsData;
+    }
+
 
     public static ArrayList<Rooms> makeRooms() {
         ArrayList<Rooms> Roomsdata = new ArrayList<>();
@@ -147,7 +148,7 @@ public class SaturnDataMaker {
         for(Students student: studentList){
             for(int i = 1; i <= 10; i++){
                 int random = (int)(Math.random() * offerings.size());
-                while(offerings.get(random).getPeriod() != i){
+                while (offerings.get(random).getPeriod() != i) {
                     random = (int)(Math.random() * offerings.size());
                 }
                 rosterData.add( new Roster(offerings.get(random).getID(), student.getStudentID()));
@@ -156,10 +157,10 @@ public class SaturnDataMaker {
         return rosterData;
     }
 
-    public static ArrayList<Offerings> offeringsData() {
-        ArrayList<Course> courses = CourseData.makeCourses();
-        ArrayList<Teachers> teachers = TeacherData.teacherData();
-        ArrayList<Rooms> rooms  = RoomData.makeRooms();
+    public static ArrayList<Offerings> offeringsData() throws FileNotFoundException {
+        ArrayList<Course> courses = SaturnDataMaker.makeCourses();
+        ArrayList<Teachers> teachers = SaturnDataMaker.teacherData();
+        ArrayList<Rooms> rooms  = SaturnDataMaker.makeRooms();
         ArrayList<Offerings> offers = new ArrayList<>();
         Period[] periods = new Period[10];
         for (int i = 1; i < 11; i++) {
