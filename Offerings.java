@@ -18,6 +18,10 @@ public class Offerings {
         return ID;
     }
 
+    public int getPeriod {
+        return period;
+    }
+
     @Override
     public String toString() {
         return "INSERT INTO Offerings (CourseID, TeacherID, RoomID, Period) VALUES (" + courseID + ", " + teacherID + ", " + roomID + ", " + period + ");";
