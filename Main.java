@@ -8,7 +8,7 @@ public class Main {
         for (Rooms room : RoomList) {
             System.out.println(room.toString());
         }
-        ArrayList<Department> departmentList = DepartmentData.departmentData();
+        ArrayList<Department> departmentList = SaturnDataMaker.departmentData();
         for (Department department : departmentList) {
             System.out.println(department);
         }
@@ -35,6 +35,14 @@ public class Main {
         ArrayList<Roster> rosterList = SaturnDataMaker.RosterData(offeringList,studentList);
         for (Roster roster : rosterList) {
             System.out.println(roster);
+        }
+        ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentNames();
+        for (AssignmentNames assignmentNames1: assignmentNames) {
+            System.out.println(assignmentNames1);
+        }
+        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments();
+        for (Assignment assignment : assignments) {
+            System.out.println(assignment);
         }
     }
 }
