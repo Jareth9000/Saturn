@@ -18,7 +18,7 @@ public class Offerings {
         return ID;
     }
 
-    public int getPeriod {
+    public int getPeriod() {
         return period;
     }
 
