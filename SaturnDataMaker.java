@@ -190,7 +190,7 @@ public class SaturnDataMaker {
 
     public static ArrayList<Assignment> makeAssignments(ArrayList<Roster> rosters) {
         ArrayList<Assignment> assignments = new ArrayList<>();
-        ArrayList<AssignmentNames> assignmentNames = AssNameMaker.makeAssignmentsNames();
+        ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentsNames();
         for (Roster roster : rosters) {
             for (int i = 0; i < 15; i++) {
                 int grade = (int) (Math.random() * 26) + 75;
