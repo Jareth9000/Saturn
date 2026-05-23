@@ -127,6 +127,7 @@ public class SaturnDataMaker {
         }
         return courses;
     }
+
     public static ArrayList<AssignmentNames> makeAssignmentNames() {
         ArrayList<AssignmentNames> assNamesData = new ArrayList<>();
         for (int i = 1; i <= 6; i++) {
