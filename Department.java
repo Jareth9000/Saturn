@@ -1,21 +1,22 @@
 public class Department {
     private final String name;
-    private static int ID = 0;
+    private static int currID = 0;
+    private int ID;
 
     public Department(String name) {
         this.name = name;
-        ID++;
+        ID = currID++;
     }
 
     public static void reset() {
-        ID = 0;
+        currID = 0;
     }
 
     public String getName() {
         return name;
     }
 
-    public static int getID() {
+    public int getID() {
         return ID;
     }
 
