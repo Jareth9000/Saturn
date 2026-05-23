@@ -1,6 +1,6 @@
 public class Department {
     private final String name;
-    private static int currID = 0;
+    private static int currID = 1;
     private int ID;
 
     public Department(String name) {
