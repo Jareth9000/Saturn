@@ -11,6 +11,10 @@ public class Course {
         ID = CourseID++;
     }
 
+    public static void reset() {
+        CourseID = 0;
+    }
+
     public int getID() {
         return ID;
     }

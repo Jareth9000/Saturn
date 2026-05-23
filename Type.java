@@ -8,6 +8,10 @@ public class Type {
         ID = TypeID++;
     }
 
+    public static void reset() {
+        TypeID = 0;
+    }
+
     public int getID() {
         return ID;
     }

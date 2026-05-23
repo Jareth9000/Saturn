@@ -8,6 +8,10 @@ public class Students {
         studentID = ID++;
     }
 
+    public static void reset() {
+        ID = 0;
+    }
+
     public int getStudentID() {
         return studentID;
     }

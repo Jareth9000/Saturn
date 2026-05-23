@@ -8,6 +8,10 @@ public class Rooms {
         ID = currID++;
     }
 
+    public static void reset() {
+        currID = 0;
+    }
+
     public int getID() {
         return ID;
     }

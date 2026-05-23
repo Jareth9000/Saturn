@@ -15,6 +15,10 @@ public class Assignment {
         ID++;
     }
 
+    public static void reset() {
+        ID = 0;
+    }
+
     public int getID() {
         return assignmentID;
     }

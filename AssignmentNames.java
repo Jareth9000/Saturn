@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 public class AssignmentNames {
     private final String name;
     private final int ID;
@@ -7,6 +9,10 @@ public class AssignmentNames {
     public AssignmentNames(String name) {
         this.name = name;
         ID = currID ++;
+    }
+
+    public static void reset() {
+        currID = 0;
     }
 
     public int getID() {
@@ -21,4 +27,6 @@ public class AssignmentNames {
     public String toString() {
         return "INSERT INTO AssignmentNames (AssignmentName) VALUES ('" + name + "');";
     }
+
+
 }
