@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -114,22 +113,26 @@ public class SaturnDataMaker {
         int type = 0;
         while (scan.hasNext()) {
             String str = scan.nextLine();
+            boolean skip = false;
             if (str.equals("AP Courses")) {
                 type = 3;
+                skip = true;
             } else if (str.equals("Regents Courses")) {
                 type = 2;
+                skip = true;
             } else if (str.equals("Elective / Non-AP / Non-Regents Courses")) {
                 type = 1;
+                skip = true;
             }
-            Course course = new Course(str, type);
-            courses.add(course);
+            if (!skip) {
+                Course course = new Course(str, type);
+                courses.add(course);
+            }
         }
         return courses;
     }
 
     public static ArrayList<AssignmentNames> makeAssignmentNames() {
-
-
         ArrayList<AssignmentNames> assNamesData = new ArrayList<>();
         for (int i = 1; i <= 6; i++) {
 
@@ -139,7 +142,6 @@ public class SaturnDataMaker {
                 assNamesData.add(new AssignmentNames("Test " + i / 2));
             }
         }
-        System.out.println();
         return assNamesData;
     }
 
