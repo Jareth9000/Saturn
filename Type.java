@@ -1,7 +1,7 @@
 public class Type {
     private final String name;
     private final int ID;
-    private static int TypeID = 0;
+    private static int TypeID = 1;
 
     public Type (String name) {
         this.name = name;
@@ -9,7 +9,7 @@ public class Type {
     }
 
     public static void reset() {
-        TypeID = 0;
+        TypeID = 1;
     }
 
     public int getID() {

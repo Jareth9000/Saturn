@@ -9,7 +9,7 @@ public class Department {
     }
 
     public static void reset() {
-        currID = 0;
+        currID = 1;
     }
 
     public String getName() {
@@ -22,6 +22,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return "INSERT INTO Departments (DepartmentName, departmentID) VALUES ('" + name + "'," + ID + ");";
+        return "INSERT INTO Departments (DepartmentName) VALUES ('" + name + "');";
     }
 }

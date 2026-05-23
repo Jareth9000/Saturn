@@ -9,7 +9,7 @@ public class Students {
     }
 
     public static void reset() {
-        ID = 0;
+        ID = 1;
     }
 
     public int getStudentID() {

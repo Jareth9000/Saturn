@@ -9,7 +9,7 @@ public class Rooms {
     }
 
     public static void reset() {
-        currID = 0;
+        currID = 1;
     }
 
     public int getID() {

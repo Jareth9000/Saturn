@@ -12,7 +12,7 @@ public class Course {
     }
 
     public static void reset() {
-        CourseID = 0;
+        CourseID = 1;
     }
 
     public int getID() {
