@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SaturnDataMaker {
-    public static ArrayList<Department> DepartmentData() throws FileNotFoundException {
+    public static ArrayList<Department> departmentData() throws FileNotFoundException {
         ArrayList<Department> departmentData = new ArrayList<>();
         File file = new File("src//DepartmentFile");
         Scanner scanner = new Scanner(file);
@@ -36,7 +36,7 @@ public class SaturnDataMaker {
         }
 
         ArrayList<Teachers> teachers = new ArrayList<>();
-        ArrayList<Department> departments = SaturnDataMaker.DepartmentData();
+        ArrayList<Department> departments = SaturnDataMaker.departmentData();
         int departmentID = 0;
 
         while (scan.hasNext()) {
