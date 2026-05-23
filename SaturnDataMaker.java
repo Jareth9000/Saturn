@@ -116,22 +116,17 @@ public class SaturnDataMaker {
             boolean skip = false;
             if (str.equals("AP Courses")) {
                 type = 3;
-                skip = true;
             } else if (str.equals("Regents Courses")) {
                 type = 2;
-                skip = true;
             } else if (str.equals("Elective / Non-AP / Non-Regents Courses")) {
                 type = 1;
-                skip = true;
-            }
-            if (!skip) {
+            } else {
                 Course course = new Course(str, type);
                 courses.add(course);
             }
         }
         return courses;
     }
-
     public static ArrayList<AssignmentNames> makeAssignmentNames() {
         ArrayList<AssignmentNames> assNamesData = new ArrayList<>();
         for (int i = 1; i <= 6; i++) {
