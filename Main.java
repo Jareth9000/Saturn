@@ -1,46 +1,57 @@
 import java.io.FileNotFoundException;
+import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-        //Print ALL of the Insert Statements
-        ArrayList<Rooms> RoomList = SaturnDataMaker.makeRooms();
-        for (Rooms room : RoomList) {
-            System.out.println(room.toString());
-        }
-        ArrayList<Department> departmentList = SaturnDataMaker.departmentData();
-        for (Department department : departmentList) {
+    public static void main() throws FileNotFoundException {
+        ArrayList<Department> departments = SaturnDataMaker.departmentData();
+        Department.reset();
+        for(Department department : departments)
+        {
             System.out.println(department);
         }
-        ArrayList<Type> typeList = SaturnDataMaker.makeTypes();
-        for (Type type : typeList) {
+        ArrayList<Rooms> rooms = SaturnDataMaker.makeRooms();
+        Rooms.reset();
+        for (Rooms room : rooms) {
+            System.out.println(room);
+        }
+        ArrayList<Type> types = SaturnDataMaker.makeTypes();
+        Type.reset();
+        for (Type type : types) {
             System.out.println(type);
         }
-        ArrayList<Students> studentList = SaturnDataMaker.studentData();
-        for (Students students : studentList) {
-            System.out.println(students);
+        ArrayList<Teachers> teachers = SaturnDataMaker.teacherData();
+        Teachers.reset();
+        for (Teachers teacher : teachers) {
+            System.out.println(teacher);
         }
-        ArrayList<Teachers> teacherList = SaturnDataMaker.teacherData();
-        for (Teachers teachers : teacherList) {
-            System.out.println(teachers);
-        }
-        ArrayList<Course> courseList = SaturnDataMaker.makeCourses();
-        for (Course course : courseList) {
+        ArrayList<Course> courses = SaturnDataMaker.makeCourses();
+        Course.reset();
+        for (Course course : courses) {
             System.out.println(course);
         }
-        ArrayList<Offerings> offeringList = SaturnDataMaker.offeringsData();
-        for (Offerings offerings : offeringList) {
-            System.out.println(offerings);
+        ArrayList<Students> students = SaturnDataMaker.studentData();
+        Students.reset();
+        for (Students student : students) {
+            System.out.println(student);
         }
-        ArrayList<Roster> rosterList = SaturnDataMaker.RosterData(offeringList,studentList);
-        for (Roster roster : rosterList) {
-            System.out.println(roster);
+        ArrayList<Offerings> offerings = SaturnDataMaker.offeringsData();
+        Offerings.reset();
+        Teachers.reset();
+        Course.reset();
+        for (Offerings offering : offerings) {
+            System.out.println(offering);
         }
         ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentNames();
-        for (AssignmentNames assignmentNames1: assignmentNames) {
-            System.out.println(assignmentNames1);
+        AssignmentNames.reset();
+        for (AssignmentNames assignmentName : assignmentNames) {
+            System.out.println(assignmentName);
         }
-        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments(rosterList);
+        ArrayList<Roster> rosters = SaturnDataMaker.RosterData(offerings,students);
+        for (Roster roster : rosters) {
+            System.out.println(roster);
+        }
+        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments(rosters);
         for (Assignment assignment : assignments) {
             System.out.println(assignment);
         }
