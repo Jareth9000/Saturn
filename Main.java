@@ -1,5 +1,4 @@
 import java.io.FileNotFoundException;
-import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 
 public class Main {
@@ -22,6 +21,7 @@ public class Main {
         }
         ArrayList<Teachers> teachers = SaturnDataMaker.teacherData();
         Teachers.reset();
+        Department.reset();
         for (Teachers teacher : teachers) {
             System.out.println(teacher);
         }
@@ -39,21 +39,22 @@ public class Main {
         Offerings.reset();
         Teachers.reset();
         Course.reset();
+        Rooms.reset();
         for (Offerings offering : offerings) {
             System.out.println(offering);
         }
-        ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentNames();
-        AssignmentNames.reset();
-        for (AssignmentNames assignmentName : assignmentNames) {
-            System.out.println(assignmentName);
-        }
-        ArrayList<Roster> rosters = SaturnDataMaker.RosterData(offerings,students);
-        for (Roster roster : rosters) {
-            System.out.println(roster);
-        }
-        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments(rosters);
-        for (Assignment assignment : assignments) {
-            System.out.println(assignment);
-        }
+//        ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentNames();
+//        AssignmentNames.reset();
+//        for (AssignmentNames assignmentName : assignmentNames) {
+//            System.out.println(assignmentName);
+//        }
+//        ArrayList<Roster> rosters = SaturnDataMaker.RosterData(offerings,students);
+//        for (Roster roster : rosters) {
+//            System.out.println(roster);
+//        }
+//        ArrayList<Assignment> assignments = SaturnDataMaker.makeAssignments(rosters);
+//        for (Assignment assignment : assignments) {
+//            System.out.println(assignment);
+//        }
     }
 }
