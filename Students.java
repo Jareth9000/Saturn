@@ -1,6 +1,6 @@
 public class Students {
     private String name;
-    private static int ID;
+    private static int ID = 1;
     private int studentID;
 
     public Students(String name) {
