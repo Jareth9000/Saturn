@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main() throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Department> departments = SaturnDataMaker.departmentData();
         Department.reset();
         for(Department department : departments)
