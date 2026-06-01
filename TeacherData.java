@@ -4,21 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TeacherData{
-    public static void main(String[] args) throws FileNotFoundException {
-        int count = 0;
-        for(Teachers testing : teacherData()){
-            System.out.println(testing);
-            if(testing.getName().substring(0, 1).equals(" ")){
-                count++;
-            }
-        }
-        System.out.println(count);
-    }
-
-
-
     public static ArrayList<Teachers> teacherData() throws FileNotFoundException {
-        File file = new File("src/TeacherFile"); // reads file with all course data from data doc
+        File file = new File("TeacherFile"); // reads file with all course data from data doc
         Scanner scan;
         try {
             scan = new Scanner(file);
@@ -27,7 +14,7 @@ public class TeacherData{
         }
 
         ArrayList<Teachers> teachers = new ArrayList<>();
-        ArrayList<Department> departments = SaturnDataMaker.DepartmentData();
+        ArrayList<Department> departments = SaturnDataMaker.departmentData();
         int departmentID = 0;
 
         while (scan.hasNext()) {
