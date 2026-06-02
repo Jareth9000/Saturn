@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -6,7 +7,7 @@ import java.util.Scanner;
 public class SaturnDataMaker {
     public static ArrayList<Department> departmentData() throws FileNotFoundException {
         ArrayList<Department> departmentData = new ArrayList<>();
-        File file = new File("src//DepartmentFile");
+        File file = new File("DepartmentFile");
         Scanner scanner = new Scanner(file);
         while(scanner.hasNextLine()){
             departmentData.add(new Department(scanner.nextLine()));
@@ -23,7 +24,7 @@ public class SaturnDataMaker {
     }
 
     public static ArrayList<Teachers> teacherData() throws FileNotFoundException {
-        File file = new File("src//TeacherFile"); // reads file with all course data from data doc
+        File file = new File("TeacherFile"); // reads file with all course data from data doc
         Scanner scan;
         try {
             scan = new Scanner(file);
@@ -37,6 +38,10 @@ public class SaturnDataMaker {
 
         while (scan.hasNext()) {
             String teacher = scan.nextLine();
+            if(teacher.contains("'")){
+                int location = teacher.indexOf("'");
+                teacher = teacher.substring(0, location) + "'" + teacher.substring(location);
+            }
             if (!teacher.contains("\"")) {
                 for (Department department:departments) {
                     if (department.getName().equals(teacher)) {
@@ -53,13 +58,16 @@ public class SaturnDataMaker {
 
     public static ArrayList<Students> studentData() throws FileNotFoundException {
         ArrayList<Students> studentsData = new ArrayList<>();
-        File file = new File("src//StudentFile");
+        File file = new File("StudentFile");
         Scanner scanner = new Scanner(file);
         while(scanner.hasNextLine()){
             studentsData.add(new Students(scanner.nextLine()));
         }
         return studentsData;
     }
+
+
+
 
 
     public static ArrayList<Rooms> makeRooms() {
@@ -99,7 +107,7 @@ public class SaturnDataMaker {
     }
 
     public static ArrayList<Course> makeCourses() {
-        File file = new File("src//CourseData"); // reads file with all course data from data doc
+        File file = new File("data"); // reads file with all course data from data doc
         Scanner scan;
         try {
             scan = new Scanner(file);
@@ -110,17 +118,19 @@ public class SaturnDataMaker {
         int type = 0;
         while (scan.hasNext()) {
             String str = scan.nextLine();
-            boolean skip = false;
+            if(str.contains("'")){
+                int location = str.indexOf("'");
+                str = str.substring(0, location) + "'" + str.substring(location);
+            }
             if (str.equals("AP Courses")) {
                 type = 3;
             } else if (str.equals("Regents Courses")) {
                 type = 2;
             } else if (str.equals("Elective / Non-AP / Non-Regents Courses")) {
                 type = 1;
-            } else {
-                Course course = new Course(str, type);
-                courses.add(course);
             }
+            Course course = new Course(str, type);
+            courses.add(course);
         }
         return courses;
     }
@@ -128,12 +138,14 @@ public class SaturnDataMaker {
     public static ArrayList<AssignmentNames> makeAssignmentNames() {
         ArrayList<AssignmentNames> assNamesData = new ArrayList<>();
         for (int i = 1; i <= 6; i++) {
+
             assNamesData.add(new AssignmentNames("Classwork " + i));
             assNamesData.add(new AssignmentNames("Homework " + i));
             if (i % 2 == 0) {
                 assNamesData.add(new AssignmentNames("Test " + i / 2));
             }
         }
+        System.out.println();
         return assNamesData;
     }
 
@@ -142,7 +154,7 @@ public class SaturnDataMaker {
         for(Students student: studentList){
             for(int i = 1; i <= 10; i++){
                 int random = (int)(Math.random() * offerings.size());
-                while (offerings.get(random).getPeriod() != i) {
+                while(offerings.get(random).getPeriod() != i){
                     random = (int)(Math.random() * offerings.size());
                 }
                 rosterData.add( new Roster(offerings.get(random).getID(), student.getStudentID()));
@@ -152,9 +164,9 @@ public class SaturnDataMaker {
     }
 
     public static ArrayList<Offerings> offeringsData() throws FileNotFoundException {
-        ArrayList<Course> courses = SaturnDataMaker.makeCourses();
-        ArrayList<Teachers> teachers = SaturnDataMaker.teacherData();
-        ArrayList<Rooms> rooms  = SaturnDataMaker.makeRooms();
+        ArrayList<Course> courses = CourseData.makeCourses();
+        ArrayList<Teachers> teachers = TeacherData.teacherData();
+        ArrayList<Rooms> rooms  = RoomData.makeRooms();
         ArrayList<Offerings> offers = new ArrayList<>();
         Period[] periods = new Period[10];
         for (int i = 1; i < 11; i++) {
@@ -185,7 +197,7 @@ public class SaturnDataMaker {
 
     public static ArrayList<Assignment> makeAssignments(ArrayList<Roster> rosters) {
         ArrayList<Assignment> assignments = new ArrayList<>();
-        ArrayList<AssignmentNames> assignmentNames = SaturnDataMaker.makeAssignmentNames();
+        ArrayList<AssignmentNames> assignmentNames = AssNameMaker.makeAssignmentNames();
         for (Roster roster : rosters) {
             for (int i = 0; i < 15; i++) {
                 int grade = (int) (Math.random() * 26) + 75;
