@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CourseData {
     public static ArrayList<Course> makeCourses() {
-        File file = new File("src//data"); // reads file with all course data from data doc
+        File file = new File("data"); // reads file with all course data from data doc
         Scanner scan;
         try {
             scan = new Scanner(file);
@@ -16,6 +16,10 @@ public class CourseData {
         int type = 0;
         while (scan.hasNext()) {
             String str = scan.nextLine();
+            if(str.contains("'")){
+                int location = str.indexOf("'");
+                str = str.substring(0, location) + "'" + str.substring(location);
+            }
             if (str.equals("AP Courses")) {
                 type = 3;
             } else if (str.equals("Regents Courses")) {
@@ -29,3 +33,4 @@ public class CourseData {
         return courses;
     }
 }
+~
