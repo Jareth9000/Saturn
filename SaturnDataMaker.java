@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -54,8 +53,7 @@ public class SaturnDataMaker {
         }
         return teachers;
     }
-
-
+    
     public static ArrayList<Students> studentData() throws FileNotFoundException {
         ArrayList<Students> studentsData = new ArrayList<>();
         File file = new File("StudentFile");
