@@ -64,10 +64,6 @@ public class SaturnDataMaker {
         return studentsData;
     }
 
-
-
-
-
     public static ArrayList<Rooms> makeRooms() {
         ArrayList<Rooms> Roomsdata = new ArrayList<>();
         String add = "";
